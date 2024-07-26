@@ -10,6 +10,7 @@ const MessagesList = () => {
 	const furigana = useAITeacher((state) => state.furigana);
 	const classroom = useAITeacher((state) => state.classroom);
 	const stopMessage = useAITeacher((state) => state.stopMessage);
+	
 
 	const container = useRef();
 
@@ -21,17 +22,15 @@ const MessagesList = () => {
 		}, [messages.length]);
 
 		const renderEnglish = (englishText) => (
-			<>
-			  {english && (
-				<p className="text-4xl inline-block px-2 rounded-sm font-bold bg-clip-text text-transparent bg-gradient-to-br from-blue-300/90 to-white/90">
-				  {englishText}
-				</p>
-			  )}
-			</>
+			english && (
+			  <span className="text-4xl inline-block px-2 rounded-sm font-bold bg-clip-text text-transparent bg-gradient-to-br from-blue-300/90 to-white/90">
+				{englishText}
+			  </span>
+			)
 		  );
 		
 		  const renderArabic = (arabic) => (
-			<p className="text-white font-bold text-4xl mt-2 font-jp flex flex-wrap gap-1">
+			<div className="text-white font-bold text-4xl mt-2 font-jp flex flex-wrap gap-1">
 			  {arabic.map((word, i) => (
 				<span key={i} className="flex flex-col justify-end items-center">
 				  {furigana && word.reading && (
@@ -40,7 +39,7 @@ const MessagesList = () => {
 				  {word.word}
 				</span>
 			  ))}
-			</p>
+			</div>
 		  );
 
 		  return (
@@ -63,18 +62,19 @@ const MessagesList = () => {
 				</div>
 			  )}
 			  {messages.map((message, i) => (
-				<div key={i}>
+				<div key={i}> 
 				  <div className="flex">
 					<div className="flex-grow">
 					  <div className="flex items-center gap-3">
 						<span
-						  className={`text-white/90 text-5xl font-bold uppercase px-3 py-1 rounded-full  ${
+						  className={`text-white/90 text-4xl font-bold uppercase px-3 py-1 rounded-full  ${
 							message.speech === "formal"
 							  ? "bg-indigo-600"
 							  : "bg-teal-600"
 						  }`}
 						>
-						  {message.speech}
+						  {message.speech}					
+						
 						</span>
 						{renderEnglish(message.answer.english)}
 					  </div>
@@ -149,9 +149,9 @@ const MessagesList = () => {
 						<div className="mt-3 flex flex-wrap gap-3 items-end">
 						  {grammar.chunks.map((chunk, i) => (
 							<div key={i} className="p-2 bg-black/30 rounded-md">
-							  <p className="text-white/90 text-4xl font-jp">
+							  <div className="text-white/90 text-4xl font-jp">
 								{renderArabic(chunk.arabic)}
-							  </p>
+							  </div>
 							  <p className="text-pink-300/90 text-2xl">
 								{chunk.meaning}
 							  </p>

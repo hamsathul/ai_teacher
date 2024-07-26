@@ -51,7 +51,7 @@ export const useAITeacher = create((set, get) => ({
 		const res = await fetch(`/api/ai?speech=${speech}&question=${question}`);
 		const data = await res.json();
 		message.answer = data;
-		message.speech;
+		message.speech = speech;
 
 		set(() => ({
 			currentMessage: message,

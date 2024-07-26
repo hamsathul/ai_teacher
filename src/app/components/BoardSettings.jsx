@@ -1,5 +1,6 @@
 import React from 'react'
 import { teachers, useAITeacher } from '@/hooks/useAITeacher'
+import Image from 'next/image';
 
 const BoardSettings = () => {
 
@@ -29,9 +30,11 @@ const BoardSettings = () => {
 		  }`}
 		>
 		  <div onClick={() => setTeacher(sensei)}>
-			<img
+			<Image
 			  src={`/images/${sensei}.jpg`}
 			  alt={sensei}
+			  width={40}
+			  height={40}
 			  className="object-cover w-40 h-40"
 			/>
 		  </div>
@@ -92,7 +95,7 @@ const BoardSettings = () => {
 		} py-4 px-10 text-4xl rounded-full transition-colors duration-500 backdrop-blur-md`}
 		onClick={() => setFurigana(!furigana)}
 	  >
-		Furigana
+		Transliteration
 	  </button>
 	  <button
 		className={`${

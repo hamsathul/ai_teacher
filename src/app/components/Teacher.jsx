@@ -2,7 +2,7 @@ import { useAITeacher } from '@/hooks/useAITeacher'
 import { useAnimations, useGLTF, Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import {useState, useEffect, useRef} from 'react'
-import { MathUtils } from "three";
+import { MathUtils, MeshStandardMaterial } from "three";
 import { randInt } from "three/src/math/MathUtils";
 
 export const teachers = ["Fatima", "Hamdan"]
@@ -14,6 +14,17 @@ const Teacher = ({
 
 	const group = useRef()
 	const {scene} = useGLTF(`models/Teacher_${teacher}.glb`)
+
+	useEffect(() => {
+		scene.traverse((child) => {
+		  if (child.material) {
+			child.material = new MeshStandardMaterial({
+			  map: child.material.map,
+			});
+		  }
+		});
+	  }, [scene]);
+
 	const {animations} = useGLTF(`models/animations_${teacher}.glb`)
 	const { actions, mixer } = useAnimations(animations, group)
 	const [animation, setAnimation] = useState("Idle")
@@ -75,7 +86,7 @@ const Teacher = ({
 		return () => {
 		  actions[animation]?.fadeOut(ANIMATION_FADE_TIME);
 		};
-	  }, [animation, actions]);
+	  }, [animation, actions, mixer]);
 
 
 	  useFrame(({ camera }) => {
