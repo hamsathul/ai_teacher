@@ -30,7 +30,7 @@ const MessagesList = () => {
 		  );
 		
 		  const renderArabic = (arabic) => (
-			<div className="text-white font-bold text-4xl mt-2 font-jp flex flex-wrap gap-1">
+			<div className="text-white font-bold text-4xl mt-2 font-ar flex flex-wrap gap-1">
 			  {arabic.map((word, i) => (
 				<span key={i} className="flex flex-col justify-end items-center">
 				  {furigana && word.reading && (
@@ -149,7 +149,7 @@ const MessagesList = () => {
 						<div className="mt-3 flex flex-wrap gap-3 items-end">
 						  {grammar.chunks.map((chunk, i) => (
 							<div key={i} className="p-2 bg-black/30 rounded-md">
-							  <div className="text-white/90 text-4xl font-jp">
+							  <div className="text-white/90 text-4xl font-ar">
 								{renderArabic(chunk.arabic)}
 							  </div>
 							  <p className="text-pink-300/90 text-2xl">
