@@ -9,6 +9,7 @@ const MessagesList = () => {
 	const english = useAITeacher((state) => state.english);
 	const furigana = useAITeacher((state) => state.furigana);
 	const classroom = useAITeacher((state) => state.classroom);
+	const stopMessage = useAITeacher((state) => state.stopMessage);
 
 	const container = useRef();
 

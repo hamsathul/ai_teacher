@@ -24,6 +24,7 @@ const itemPlacement = {
 	  board: {
 		position: [0.45, 0.382, -6],
 		scale: 1.85,
+		distanceFactor: 0.5,
 	  },
 	},
 	alternative: {
@@ -33,7 +34,7 @@ const itemPlacement = {
 		scale: 0.4,
 	  },
 	  teacher: { position: [-1, -1.7, -3] },
-	  board: { position: [1.4, 0.84, -8] },
+	  board: { position: [1.4, 0.84, -8],scale: 1.95, distanceFactor: 0.5, }
 	},
   };
 
@@ -56,7 +57,7 @@ const Experience = () => {
 	<Suspense>
 	<Float speed={0.5} floatIntensity={0.2} rotationIntensity={0.1}>
 	
-	<Html {...itemPlacement[classroom].board} transform distanceFactor={0.5}>
+	<Html {...itemPlacement[classroom].board} transform >
 		<div>
 			<MessagesList/>
 			<BoardSettings />
