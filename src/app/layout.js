@@ -1,7 +1,19 @@
-import { Inter } from "next/font/google";
+import { Roboto, Noto_Kufi_Arabic  } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["400", "700"],
+	variable: "--font-roboto",
+  });
+  
+  export const notoKufiAR = Noto_Kufi_Arabic({
+	display: "swap",
+	subsets: ["latin"],
+	variable: "--font-noto-kufi-arabic",
+	
+  });
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +22,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${roboto.variable} ${notoKufiAR.variable}`}>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }
