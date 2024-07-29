@@ -202,6 +202,7 @@ export async function GET(req) {
 
     // Parse and return the response
     const responseContent = JSON.parse(chatCompletion.choices[0].message.content);
+	console.log("Response:", responseContent);
     return new Response(JSON.stringify(responseContent), { status: 200 });
 
   } catch (error) {

@@ -17,12 +17,12 @@ export async function GET(req) {
   const speechSynthesizer = new sdk.SpeechSynthesizer(speechConfig);
   const visemes = [];
   speechSynthesizer.visemeReceived = function (s, e) {
-    // console.log(
-    //   "(Viseme), Audio offset: " +
-    //     e.audioOffset / 10000 +
-    //     "ms. Viseme ID: " +
-    //     e.visemeId
-    // );
+    console.log(
+      "(Viseme), Audio offset: " +
+        e.audioOffset / 10000 +
+        "ms. Viseme ID: " +
+        e.visemeId
+    );
     visemes.push([e.audioOffset / 10000, e.visemeId]);
   };
   const audioStream = await new Promise((resolve, reject) => {

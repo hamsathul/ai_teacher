@@ -24,8 +24,8 @@ This project is a web application built using React, Three.js, Next.js, Zustand,
 To run this project locally, follow these steps:
 
 1. Clone the repository.
-2. Install the project dependencies using Yarn.
-3. Start the development server.
+2. Install the project dependencies using Yarn. yarn
+3. Start the development server. yarn dev
 4. Open the application in your browser.
 
 ## Usage
