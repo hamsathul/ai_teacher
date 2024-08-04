@@ -1,5 +1,7 @@
 # Arabic AI Teacher
 
+![Image](public/images/ai_teacher.jpg)
+
 This project is a web application built using React, Three.js, Next.js, Zustand, Yarn, Falconllm, and Azure TTS. The purpose of this application is to provide a virtual classroom experience where users can translate Arabic words and view the translation, transliteration, and pronunciation in a 3D classroom setting with a virtual teacher.
 
 ## Features
