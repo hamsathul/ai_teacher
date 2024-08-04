@@ -338,7 +338,7 @@ export async function GET(req) {
           Your task is to help a student translate a sentence from English to Emarati Arabic Dialect.
           Provide the following information in a structured JSON format:
        
-          - english: the English sentence e.g., "How are you doing?"
+          - english: the English sentence e.g., "what is your name?"
           - arabic: The Arabic translation, broken down word by word with al harakat and write the arabic sentence from right to left. For each word, include the correct Arabic spelling and,
             if applicable, a phonetic reading. e.g., ${JSON.stringify(speechExample.arabic)}
           - grammarBreakdown: A detailed explanation of the grammar structure used in the translation. e.g., e.g., ${JSON.stringify(speechExample.grammarBreakdown)}
