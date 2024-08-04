@@ -31,7 +31,7 @@ const MessagesList = () => {
 		
 		  const renderArabic = (arabic) => (
 			<div className="text-white font-bold text-4xl mt-2 font-ar flex flex-wrap gap-1">
-			  {arabic.map((word, i) => (
+			  {arabic.slice().reverse().map((word, i) => (
 				<span key={i} className="flex flex-col justify-end items-center">
 				  {furigana && word.reading && (
 					<span className="text-2xl text-white/65">{word.reading}</span>
@@ -41,6 +41,7 @@ const MessagesList = () => {
 			  ))}
 			</div>
 		  );
+		  
 
 		  return (
 			<div
@@ -83,7 +84,7 @@ const MessagesList = () => {
 					</div>
 					{currentMessage === message ? (
 					  <button
-						className="text-white/65"
+						className="text-lime-500"
 						onClick={() => stopMessage(message)}
 					  >
 						<svg
@@ -108,7 +109,7 @@ const MessagesList = () => {
 					  </button>
 					) : (
 					  <button
-						className="text-white/65"
+						className="text-lime-500"
 						onClick={() => playMessage(message)}
 					  >
 						<svg

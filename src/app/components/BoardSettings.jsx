@@ -21,7 +21,7 @@ const BoardSettings = () => {
 
   return (
 	<>
-	<div className="absolute right-0 bottom-full flex flex-row gap-10 mb-20">
+	{/* <div className="absolute right-0 bottom-full flex flex-row gap-10 mb-20">
 	  {teachers.map((sensei, idx) => (
 		<div
 		  key={idx}
@@ -41,8 +41,8 @@ const BoardSettings = () => {
 		  <h2 className="text-3xl font-bold mt-3 text-center">{sensei}</h2>
 		</div>
 	  ))}
-	</div>
-	<div className="absolute left-0 bottom-full flex flex-row gap-2 mb-20">
+	</div> */}
+	{/* <div className="absolute left-0 bottom-full flex flex-row gap-2 mb-20">
 	  <button
 		className={` ${
 		  classroom === "default"
@@ -63,7 +63,7 @@ const BoardSettings = () => {
 	  >
 		Alternative classroom
 	  </button>
-	</div>
+	</div> */}
 	<div className="absolute left-0 top-full flex flex-row gap-2 mt-20">
 	  <button
 		className={` ${

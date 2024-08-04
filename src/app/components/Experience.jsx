@@ -94,7 +94,8 @@ const CAMERA_POSITIONS = {
   const CAMERA_ZOOMS = {
 	default: 1,
 	loading: 1.3,
-	speaking: 2.1204819420055387,
+	// speaking: 2.1204819420055387,
+	speaking: 2.4
   };
 
 const CameraManager = () => {
