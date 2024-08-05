@@ -1,4 +1,4 @@
-# Arabic AI Teacher
+# RAMSA - Arabic AI Teacher
 
 ![Image](public/images/ai_teacher.jpg)
 
